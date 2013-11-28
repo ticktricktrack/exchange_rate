@@ -1,0 +1,25 @@
+.span9
+  .row-fluid
+    = form_tag('/convert', method: 'post', class: 'form-horizontal') do
+      .control-group
+        = label_tag :amount, 'Amount', class: "control-label"
+        .controls
+          = text_field_tag :amount, (@amount or "100")
+      
+      .control-group
+        = label_tag :date, "From", class: "control-label"
+        .controls
+          = select_tag :date, options_for_select(@dates, @date)
+      
+      .control-group
+        = label_tag :from_currency, "Date", class: "control-label"
+        .controls
+          = select_tag :from_currency, options_for_select(@currencies, @from_currency)
+      
+      .control-group
+        = label_tag :to_currency, "To", class: "control-label"
+        .controls
+          = select_tag :to_currency, options_for_select(@currencies, @to_currency)
+
+      .form-actions    
+        = submit_tag 'Convert', class: 'btn btn-primary'

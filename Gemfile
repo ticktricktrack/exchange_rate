@@ -32,6 +32,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rk_fx_rates'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+gem 'haml-rails'
+
+gem 'pry-remote', group: [:development, :test]
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
